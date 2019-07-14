@@ -22,6 +22,21 @@ def _numerical_gradient_no_batch(f, x):
         
     return grad
 
+"""
+#这是梯度的另一种求法，大同小异，方法没变，只是变更了表示方法z=f(x,y)
+def function_1(x,y):
+    return x**2+y**2
+
+def fun_grad(f,x,y):
+    h=1e-4
+    grad_x=(f((x+h),y)-f((x-h),y))/(2*h)
+    grad_y=(f(x,(y+h))-f(x,(y-h)))/(2*h)
+    grad=[grad_x,grad_y]
+    return grad
+
+#求（3，4）处的梯度
+fun_grad(function_1,3.0,4.0)
+"""
 
 def numerical_gradient(f, X):
     if X.ndim == 1:
