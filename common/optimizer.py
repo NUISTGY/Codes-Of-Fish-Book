@@ -29,8 +29,8 @@ class Momentum:
                 self.v[key] = np.zeros_like(val)
                 
         for key in params.keys():
-            self.v[key] = self.momentum*self.v[key] - self.lr*grads[key] 
-            params[key] += self.v[key]
+            self.v[key] = self.lr*grads[key] - self.momentum*self.v[key] 
+            params[key] -= self.v[key]
 
 
 class Nesterov:
